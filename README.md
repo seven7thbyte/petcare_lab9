@@ -41,45 +41,50 @@ Hosting   : Render.com
 
 ---
 
-##Folder Structure
+## Folder Structure
+
+```
 petcare/
-│
 ├── public/
-| ├──assets
-│ ├── login.html
-│ ├── dashboard.html
-│ ├── sign.css
-│ ├── login.js
-│ └── dashboard.js
-│
+│   ├── assets/
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── sign.css
+│   └── login.js
+├── dashboard.js
 ├── routes/
-│ ├── userRoutes.js
-│ └── petRoutes.js
-│
-├── uploads/ # Uploaded profile pictures
-├── server.js # Main server file
-├──db
-|  ├──db.js # MySQL connection config
-├── .env # Environment variables
+│   ├── userRoutes.js
+│   └── petRoutes.js
+├── uploads/             # Uploaded profile pictures
+├── server.js            # Main server file
+├── db/
+│   └── db.js            # MySQL connection config
+├── .env                 # Environment variables
 ├── package.json
 └── README.md
+```
 
+## .env file
 
-
-.env file
-PORT=3000
-DB_HOST=your-aiven-mysql-host
-DB_USER=avnadmin
-DB_PASSWORD=your-db-password
-DB_NAME=petcare
-EMAIL_USER=your-email@gmail.com
+```
+PORT=3000  
+DB_HOST=your-aiven-mysql-host  
+DB_USER=avnadmin  
+DB_PASSWORD=your-db-password  
+DB_NAME=petcare  
+EMAIL_USER=your-email@gmail.com  
 EMAIL_PASS=your-email-password
+```
 
-install 
-npm init y
+## Install
 
-start command
+```bash
+npm init -y
+npm install dotenv express mysql2 cors multer nodemailer fs path nodemon
+```
+
+## Start Server
+
+```bash
 npm run dev
-
-dependencies 
-npm i cors dotenv express fs multer mysql2 nodemailer nodemon path
+```
