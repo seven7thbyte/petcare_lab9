@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PetCare Dashboard</title>
+  <link rel="icon" href="./img/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="dashboard.js"></script>
+</head>
+<body class="min-h-screen w-full bg-gradient-to-r from-black to-green-800 flex flex-col items-center">
+
+  <header class="w-full shadow-md py-4 px-8 flex items-center gap-4 bg-green-700">
+    <img src="./assests/logo.png" alt="PetCare Logo" class="h-10 w-10">
+    <h1 class="text-2xl font-bold text-white">PetCare Dashboard</h1>
+  </header>
+
+  <section class="bg-white shadow rounded p-6 mt-8 w-full max-w-xl">
+    <h2 class="text-xl font-semibold mb-4">Add Pet</h2>
+    <form id="addPetForm" class="space-y-4">
+      <div class="flex flex-col gap-2">
+        <input type="text" name="name" placeholder="Pet Name" required class="border rounded p-2">
+        <input type="text" name="type" placeholder="Pet Type (e.g., Dog, Cat)" required class="border rounded p-2">
+        <input type="number" name="age" placeholder="Age" required class="border rounded p-2">
+      </div>
+      <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Add Pet</button>
+    </form>
+  </section>
+
+  <section class="bg-white shadow rounded p-6 mt-8 w-full max-w-4xl">
+    <h2 class="text-xl font-semibold mb-4">All Pets</h2>
+    <table class="w-full border-collapse">
+      <thead class="bg-green-700">
+        <tr>
+          <th class="border p-2 text-white">Name</th>
+          <th class="border p-2 text-white">Type</th>
+          <th class="border p-2 text-white">Age</th>
+          <th class="border p-2 text-white">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="petTableBody"></tbody>
+    </table>
+  </section>
+</body>
+</html>

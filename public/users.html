@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PetCare Users</title>
+  <script>
+    const BASE_URL = window.location.origin;
+
+const form = document.getElementById('registerForm');
+if (form) {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const res = await fetch(`${BASE_URL}/api/users/register`, {
+      method: 'POST',
+      body: formData
+    });
+    const msg = await res.text();
+    document.getElementById('msg').textContent = msg;
+    form.reset();
+  });
+}
+const userList = document.getElementById('userList');
+if (userList) {
+  fetch(`${BASE_URL}/api/users`)
+    .then(res => res.json())
+    .then(data => {
+      userList.innerHTML = data.map(user => `
+        <div class="bg-white p-4 rounded shadow flex justify-between items-center">
+          <div>
+            <h3 class="font-bold">${user.name}</h3>
+            <p>${user.email}</p>
+            <p>${user.phone}</p>
+          </div>
+          <img src="/uploads/${user.profile_picture}" class="w-16 h-16 object-cover rounded-full" />
+          <button onclick="deleteUser(${user.id})" class="text-red-500 hover:underline">Delete</button>
+        </div>
+      `).join('');
+    });
+}
+
+function deleteUser(id) {
+  if (!confirm('Delete this user?')) return;
+  fetch(`${BASE_URL}/api/users/${id}`, {
+    method: 'DELETE'
+  }).then(() => location.reload());
+}
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-10 bg-gray-50">
+  <h2 class="text-2xl mb-6 font-bold text-center">Registered Users</h2>
+  <div id="userList" class="grid gap-4 max-w-4xl mx-auto"></div>
+</body>
+</html>

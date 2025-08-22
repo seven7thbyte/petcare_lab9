@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare</title>
+    <link rel="icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <img src="./assests/logo.png" alt="pet_logo" id="logo">
+        <nav id="navbar" class="flex flex-row sm:flex-row sm:w-auto sm:space-x-4 gap-1">
+            <a href="./index.html" class="nav-link my-1 sm:my-0 text-xs md:text-lg"><i class="fa-solid fa-house text-white px-2 icon"></i>Home</a>
+            <a href="./dashboard.html" class="nav-link my-1 sm:my-0 text-xs md:text-lg"><i class="fa-solid fa-map-location text-white px-2 icon"></i>Dashboard</a>
+            <a href="./contact.html" class="nav-link my-1 sm:my-0 text-xs md:text-lg"><i class="fa-solid fa-phone text-white px-2 icon"></i>Contact</a>
+            <a href="./login.html" class="nav-link my-1 sm:my-0 text-xs md:text-lg"><i class="fa-solid fa-right-to-bracket text-white px-2 icon"></i>Sign in</a>
+        </nav>
+        <button id="menuToggle"><i class="fa-solid fa-bars text-white h-[10px] text-xs md:text-lg"></i></button>
+        <h1 class="sm:block text-white font-bold sm:ml-4  md:text-lg hidden" style="font-family: roboto; font-size: xx-large;">PetCare</h1>
+    </header>
+    <div class="banner-container">
+        <img src="./assests/petAdopt.jpg" alt="banner" id="banner">
+        <div class="banner-text">    
+            <h1 class="font-bold text-7xl">ADOPT A PET</h1>
+            <h2 class="font-bold text-4xl">Browse your new friend</h2>
+            <h3 class="font-bold text-2xl">Helping pets to get a new home join our network.</h3>
+        </div>
+    </div>
+
+    <div class="awesome my-10">
+        <ul class="flex justify-center gap-20 flex-wrap">
+            <li class="flex flex-col items-center border-2 border-green-500 rounded-[10px] p-14 animal"><i class="fa-solid fa-paw text-5xl"></i>
+                <span class="anm mt-6 font-semibold text-green-700 text-xl">Dog</span>
+            <div class="font-bold info mt-2 text-white text-sm">Loyal & friendly Dog</div>
+        </li>
+            <li class="flex flex-col items-center border-2 border-green-500 rounded-[10px] p-14 animal"><i class="fa-solid fa-cat text-5xl cat-icon"></i><span class="anm mt-6 font-semibold text-green-700 text-xl">Cat</span>
+            <div class="font-bold info mt-2 text-white text-sm">Are orange cats best?</div>
+            </li>
+            <li class="flex flex-col items-center border-2 border-green-500 rounded-[10px] p-14 animal"><i class="fa-solid fa-otter text-5xl other"></i><span class="anm mt-6 font-semibold text-green-700 text-xl">Other</span>
+            <div class="font-bold info mt-2 text-white text-sm">Adopt a different one</div>
+            </li>
+        </ul>
+    </div>
+    <section id="petwelfare" class="bg-gray-100 py-8">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4">
+        <img src="./assests/pexels-alena-koval-233944-982865.jpg" alt="photo" id="cat" class="rounded-lg shadow-lg max-w-md">
+        <div id="texxt">
+            <h2 class="text-2xl font-bold mb-2">Pet Welfare Service</h2>
+            <p class="mb-4">The Pet Welfare section is dedicated to the care and well-being...</p>
+            <article class="mb-2">
+                <h3 class="text-lg font-bold">Rescue and Shelter</h3>
+                <p>Stray or injured animals are rescued and given temporary shelter...</p>
+            </article>
+            <article>
+                <h3 class="text-lg font-bold">Veterinary Care</h3>
+                <p>Includes vaccination, deworming, sterilization, and emergency services.</p>
+            </article>
+            <article>
+                <h3 class="text-lg font-bold">Nutrition & Grooming</h3>
+                <p>Balanced diet plans and regular grooming to ensure pets stay healthy and comfortable.</p>
+            </article>
+        </div>
+    </div>
+</section>
+<div id="imain">
+<img src="./assests/pets.png" alt="pets">
+</div>
+<section id="petadoption" class="bg-gray-100 py-8">
+    <div class="container mx-auto flex flex-col md:flex-row-reverse items-center gap-8 px-4">
+        <img src="./assests/hamster-basket-isolated-white-table.jpg" alt="photo" id="hamster" class="rounded-lg shadow-lg max-w-md">
+        <div id="texxt">
+            <h2 class="text-2xl font-bold">Pet Adoption Service</h2>
+            <p>The Pet Adoption section connects animals in need with families...</p>
+            <article>
+                <h3 class="text-lg font-bold">View Available Pets</h3>
+                <p>Browse our online database of dogs, cats, and other pets ready for adoption.</p>
+            </article>
+            <article>
+                <h3 class="text-lg font-bold">Application and Screening</h3>
+                <p>Submit an application and go through a background and home check.</p>
+            </article>
+            <article>
+                <h3 class="text-lg font-bold">Meet & Bond</h3>
+                <p>Spend time with the pet to ensure compatibility and comfort.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+    <main class="flex flex-col justify-center items-center py-8">
+        <h2 class="text-lg font-bold">Geolocation Data</h2>
+        <p class="font-bold">Latitude: <span id="lat"></span></p>
+        <p class="font-bold">Longitude: <span id="lon"></span></p>
+        <p class="font-bold">Timesstamp: <span id="timestamp"></span></p>
+        <div id="error"></div>
+    </main>
+
+    <section id="feedback" class="p-4 bg-gray-100 justify-center flex flex-col items-center">
+        <h2 class="text-lg font-bold justify-center flex">Feedback Form</h2>
+        <form id="feedbackForm" class="flex flex-col justify-center gap-2 w-full max-w-md">
+            <input type="text" id="name" placeholder="Your Name" required class="p-2 border">
+            <textarea id="comment" placeholder="Your Comment" required class="p-2 border"></textarea>
+            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Submit</button>
+        </form>
+        <div id="feedbackList" class="mt-4">
+            <h3 class="text-lg font-bold">Previous Feedback</h3>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy Alok Tayal 25-06-2025</p>
+    </footer>
+    <script>
+        window.onload=function(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(getPositions,showError);
+            }else{
+                console.log("Browser don't support geolocation")
+            }
+        }
+        function getPositions(position){
+            document.getElementById("lat").innerText= position.coords.latitude;
+            document.getElementById("lon").innerText=position.coords.longitude;
+            document.getElementById("timestamp").innerText=new Date(position.timestamp)
+        }
+        function showError(error){
+            let msg="";
+            switch(error.code){
+                case error.PERMISSION_DENIED:
+                    msg="User Denied Permisssion";
+                    break;
+                case error.POSITION_UNAVILABLE:
+                    msg="Not able to fetch user position"
+                    break;
+                case error.TIMEOUT:
+                    msg="TimeOut";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    msg="Unkown Error";
+                    break;
+            }
+            displayError(msg)
+        }
+        function displayError(msg){
+            document.getElementById("error").innerText=msg;
+        }
+        const form = document.getElementById('feedbackForm');
+        const feedbackList = document.getElementById('feedbackList');
+
+        function loadFeedback() {
+            const feedback = JSON.parse(localStorage.getItem('feedback') || '[]');
+            feedbackList.innerHTML = '<h3>Previous Feedback</h3>';
+            feedback.forEach(entry => {
+            const div = document.createElement('div');
+            div.classList.add('p-2', 'bg-white', 'my-2', 'border');
+            div.innerText = `${entry.name}: ${entry.comment}`;
+            feedbackList.appendChild(div);
+        });
+        }
+
+        form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const comment = document.getElementById('comment').value.trim();
+        if (!name || !comment) return;
+
+        const feedback = JSON.parse(localStorage.getItem('feedback') || '[]');
+        feedback.push({ name, comment });
+        localStorage.setItem('feedback', JSON.stringify(feedback));
+        form.reset();
+        loadFeedback();
+        });
+
+        loadFeedback();
+        function myFunc(){
+            var popup = document.getElementById("popupBox");
+            popup.classList.remove("unshow");
+            popup.classList.add("show");
+        }
+
+        function closePopup(){
+            var popup = document.getElementById("popupBox");
+            popup.classList.remove('show')
+            popup.classList.add("unshow");
+        }
+
+    </script>
+</body>
+</html>

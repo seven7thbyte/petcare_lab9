@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | PetCare</title>
+  <link rel="icon" href="./assests/logo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./sign.css">
+  <script defer src="./login.js"></script>
+</head>
+<body class="h-screen w-full bg-gradient-to-r from-black to-green-800">
+  
+  <header class="flex items-center p-4 gap-2">
+    <img src="./assests/logo.png" alt="pet_logo" id="logo" class="w-[50px] h-[50px]">
+    <h1 class="text-white font-bold" style="font-family: roboto; font-size: xx-large;">PetCare</h1>
+  </header>  
+  
+  <main class="flex-1 p-6 flex flex-col items-center">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md text-center mb-10">
+      <img src="assests/logo.png" alt="PetCare Logo" class="h-16 mx-auto mb-4">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Sign In</h2>
+
+      <form id="signInForm" class="flex flex-col gap-4" enctype="multipart/form-data">
+        <input type="text" name="name" id="name" placeholder="Full Name" class="p-4 border-2 border-gray-400" required>
+        <input type="email" id="email" name="email" placeholder="Email" class="p-4 border-2 border-gray-400" required>
+        <input type="text" name="phone" id="phone" placeholder="Phone Number" class="p-4 border-2 border-gray-400" required>
+        <input type="password" id="password" name="password" placeholder="Password" class="p-4 border-2 border-gray-400" required>
+        <input type="file" id="profile_picture" name="profile_picture" class="p-4" required>
+        <button type="submit" class="bg-green-700 text-white py-2 rounded hover:bg-green-800">Sign In</button>
+      </form>
+
+    </div>
+    <h2 class="text-white text-xl mt-8 mb-4">All Registered Users</h2>
+    <div id="userList" class="gap-4 flex flex-col flex-wrap"></div>
+
+  </main>
+
+</body>
+</html>
