@@ -33,8 +33,16 @@ document.getElementById('signInForm').addEventListener('submit', function(e) {
   });
 function loadUsers() {
   fetch('/api/users')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error(`Server error: ${res.status}`);
+      return res.json();
+    })
     .then(users => {
+      if (!Array.isArray(users)) {
+        console.error('Expected array, got:', users);
+        throw new Error('Invalid response format');
+      }
+
       const userList = document.getElementById('userList');
       userList.innerHTML = ''; 
 
@@ -55,6 +63,11 @@ function loadUsers() {
 
         userList.appendChild(div);
       });
+    })
+    .catch(err => {
+      console.error('Error loading users:', err);
+      const userList = document.getElementById('userList');
+      userList.innerHTML = `<p class="text-red-500">Failed to load users. ${err.message}</p>`;
     });
 }
 
